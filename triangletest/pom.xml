@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>triangletest</groupId>
-    <artifactId>TriangleChecker</artifactId>
+    <artifactId>triangletest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>TriangleChecker</name>
+    <name>triangletest</name>
     <url>http://www.example.com</url>
 
     <properties>
