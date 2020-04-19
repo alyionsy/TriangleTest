@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="trianglecheck.TestTriangleCheck" time="0.183" tests="32" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="trianglecheck.TestTriangleCheck" time="0.21" tests="32" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="java.class.path" value="C:\studying\java\triangletest\target\test-classes;C:\studying\java\triangletest\target\classes;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\acer\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\acer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\acer\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.1\log4j-api-2.13.1.jar;C:\Users\acer\.m2\repository\org\apache\logging\log4j\log4j-core\2.13.1\log4j-core-2.13.1.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;"/>
+    <property name="java.class.path" value="C:\Users\acer\Documents\GitHub\TriangleTest\triangletest\target\test-classes;C:\Users\acer\Documents\GitHub\TriangleTest\triangletest\target\classes;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\acer\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\acer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\acer\AppData\Local\Temp\surefire1575418494397403631\surefirebooter245903772800086759.jar C:\Users\acer\AppData\Local\Temp\surefire1575418494397403631 2020-04-20T00-52-39_224-jvmRun1 surefire11623622713519898910tmp surefire_031388594386570991tmp"/>
+    <property name="sun.java.command" value="C:\Users\acer\AppData\Local\Temp\surefire729644729958394717\surefirebooter11588002078262280266.jar C:\Users\acer\AppData\Local\Temp\surefire729644729958394717 2020-04-20T01-13-27_451-jvmRun1 surefire15156205552535805741tmp surefire_015944267872105016440tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\studying\java\triangletest\target\test-classes;C:\studying\java\triangletest\target\classes;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\acer\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\acer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\acer\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.1\log4j-api-2.13.1.jar;C:\Users\acer\.m2\repository\org\apache\logging\log4j\log4j-core\2.13.1\log4j-core-2.13.1.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\acer\Documents\GitHub\TriangleTest\triangletest\target\test-classes;C:\Users\acer\Documents\GitHub\TriangleTest\triangletest\target\classes;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\acer\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\acer\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\acer\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;C:\Users\acer\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\acer"/>
     <property name="user.language" value="ru"/>
@@ -25,12 +25,12 @@
     <property name="java.version.date" value="2020-01-14"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-13.0.2"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\studying\java\triangletest"/>
+    <property name="basedir" value="C:\Users\acer\Documents\GitHub\TriangleTest\triangletest"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\acer\AppData\Local\Temp\surefire1575418494397403631\surefirebooter245903772800086759.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\acer\AppData\Local\Temp\surefire729644729958394717\surefirebooter11588002078262280266.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
@@ -44,7 +44,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\acer\AppData\Local\Temp\"/>
     <property name="java.version" value="13.0.2"/>
-    <property name="user.dir" value="C:\studying\java\triangletest"/>
+    <property name="user.dir" value="C:\Users\acer\Documents\GitHub\TriangleTest\triangletest"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -56,36 +56,36 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="triangleCheckTestZero{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.035"/>
+  <testcase name="triangleCheckTestZero{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.034"/>
   <testcase name="triangleCheckTestZero{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestZero{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestNegativeNumber{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
+  <testcase name="triangleCheckTestZero{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
+  <testcase name="triangleCheckTestNegativeNumber{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
   <testcase name="triangleCheckTestNegativeNumber{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestNegativeNumber{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestIsosceles{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.003"/>
+  <testcase name="triangleCheckTestIsosceles{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.005"/>
   <testcase name="triangleCheckTestIsosceles{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
   <testcase name="triangleCheckTestIsosceles{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
   <testcase name="triangleCheckTestRight{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
   <testcase name="triangleCheckTestRight{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestRight{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestRight{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestZeros{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestZeros{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestZeros{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestZeros{int[]}[4]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestNegativeNumbers{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestZeros{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
+  <testcase name="triangleCheckTestZeros{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
+  <testcase name="triangleCheckTestZeros{int[]}[4]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
+  <testcase name="triangleCheckTestNegativeNumbers{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestNegativeNumbers{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestNegativeNumbers{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestNegativeNumbers{int[]}[4]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestPositive{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestNegativeNumbers{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestNegativeNumbers{int[]}[4]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
+  <testcase name="triangleCheckTestPositive{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
   <testcase name="triangleCheckTestPositive{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestPositive{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestEquilateral{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestEquilateral{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
-  <testcase name="triangleCheckTestEquilateral{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.002"/>
+  <testcase name="triangleCheckTestPositive{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
+  <testcase name="triangleCheckTestEquilateral{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestEquilateral{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
+  <testcase name="triangleCheckTestEquilateral{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestNegative{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestNegative{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestNegative{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestNegative{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestNegative{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestEquals{int[]}[1]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
   <testcase name="triangleCheckTestEquals{int[]}[2]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
-  <testcase name="triangleCheckTestEquals{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0"/>
+  <testcase name="triangleCheckTestEquals{int[]}[3]" classname="trianglecheck.TestTriangleCheck" time="0.001"/>
 </testsuite>
