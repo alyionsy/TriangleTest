@@ -67,8 +67,8 @@ public class TestTriangleCheck {
     static Stream<Arguments> intArrayProviderZero() {
         return Stream.of(
                 Arguments.of((Object) new int[]{0, 4, 7}),
-                Arguments.of((Object) new int[]{0, 0, 13}),
-                Arguments.of((Object) new int[]{0, 0, 0})
+                Arguments.of((Object) new int[]{1, 0, 13}),
+                Arguments.of((Object) new int[]{2, 3, 0})
         );
     }
 
