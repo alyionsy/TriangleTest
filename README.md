@@ -8,3 +8,6 @@ Graphics
 ![Cobertura Coverage](https://i.imgur.com/kpIrb1U.png)
 ---
 ![Divided by group name](https://i.imgur.com/Bpy3ekC.png)
+---
+![Version 2](https://i.imgur.com/eHzNTCv.png)
+---
