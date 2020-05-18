@@ -20,12 +20,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderPositive")
-    public void triangleCheckTestPositive(int[] sides) {
-        try {
-            Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestPositive(int[] sides) throws TriangleCheckException {
+        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderNegative() {
@@ -38,12 +34,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderNegative")
-    public void triangleCheckTestNegative(int[] sides) {
-        try {
-            Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestNegative(int[] sides) throws TriangleCheckException {
+        Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderEquals() {
@@ -56,12 +48,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquals")
-    public void triangleCheckTestEquals(int[] sides) {
-        try {
-            Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestEquals(int[] sides) throws TriangleCheckException {
+        Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderZero() {
@@ -75,13 +63,9 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderZero")
     public void triangleCheckTestZero(int[] sides) {
-        try {
+        Assertions.assertThrows(TriangleCheckException.class, () -> {
             TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
-        } catch (TriangleCheckException e) {
-            String expected = "Zero and negative values aren't allowed here.";
-            String actual = e.getMessage();
-            Assertions.assertEquals(expected, actual);
-        }
+        });
     }
 
     static Stream<Arguments> intArrayProviderZeros() {
@@ -96,13 +80,9 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderZeros")
     public void triangleCheckTestZeros(int[] sides) {
-        try {
+        Assertions.assertThrows(TriangleCheckException.class, () -> {
             TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
-        } catch (TriangleCheckException e) {
-            String expected = "Zero and negative values aren't allowed here.";
-            String actual = e.getMessage();
-            Assertions.assertEquals(expected, actual);
-        }
+        });
     }
 
     static Stream<Arguments> intArrayProviderNegativeNumber() {
@@ -116,13 +96,9 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumber")
     public void triangleCheckTestNegativeNumber(int[] sides) {
-        try {
+        Assertions.assertThrows(TriangleCheckException.class, () -> {
             TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
-        } catch (TriangleCheckException e) {
-            String expected = "Zero and negative values aren't allowed here.";
-            String actual = e.getMessage();
-            Assertions.assertEquals(expected, actual);
-        }
+        });
     }
 
     static Stream<Arguments> intArrayProviderNegativeNumbers() {
@@ -137,13 +113,9 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumbers")
     public void triangleCheckTestNegativeNumbers(int[] sides) {
-        try {
+        Assertions.assertThrows(TriangleCheckException.class, () -> {
             TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
-        } catch (TriangleCheckException e) {
-            String expected = "Zero and negative values aren't allowed here.";
-            String actual = e.getMessage();
-            Assertions.assertEquals(expected, actual);
-        }
+        });
     }
 
     static Stream<Arguments> intArrayProviderIsosceles() {
@@ -156,12 +128,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderIsosceles")
-    public void triangleCheckTestIsosceles(int[] sides) {
-        try {
-            Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestIsosceles(int[] sides) throws TriangleCheckException {
+        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderEquilateral() {
@@ -174,12 +142,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquilateral")
-    public void triangleCheckTestEquilateral(int[] sides) {
-        try {
-            Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestEquilateral(int[] sides) throws TriangleCheckException {
+        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderRight() {
@@ -192,11 +156,7 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderRight")
-    public void triangleCheckTestRight(int[] sides) {
-        try {
-            Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
-        } catch (TriangleCheckException e) {
-            Assertions.fail(e.getMessage());
-        }
+    public void triangleCheckTestRight(int[] sides) throws TriangleCheckException {
+        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
     }
 }
