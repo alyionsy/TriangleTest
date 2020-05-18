@@ -1,8 +1,8 @@
-package by.bsu.company.triangle.util;
+package by.bsu.company.triangle.valid;
 
 import by.bsu.company.triangle.exception.TriangleException;
 
-public class TriangleUtil {
+public class TriangleValidator {
     public static boolean isTriangleCorrect(int a, int b, int c) throws TriangleException {
         if (a > 0 && b > 0 && c > 0 ) {
             return a < b + c && b < a + c && c < a + b;
