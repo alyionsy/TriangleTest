@@ -1,7 +1,7 @@
-package trianglecheck;
+package by.bsu.company.triangle;
 
-import by.bsu.company.triangle.check.TriangleCheck;
-import by.bsu.company.triangle.exception.TriangleCheckException;
+import by.bsu.company.triangle.util.TriangleUtil;
+import by.bsu.company.triangle.exception.TriangleException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-public class TestTriangleCheck {
+public class TestTriangleUtil {
     static Stream<Arguments> intArrayProviderPositive() {
         return Stream.of(
                 Arguments.of((Object) new int[]{3, 4, 5}),
@@ -20,8 +20,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderPositive")
-    public void triangleCheckTestPositive(int[] sides) throws TriangleCheckException {
-        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestPositive(int[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderNegative() {
@@ -34,8 +34,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderNegative")
-    public void triangleCheckTestNegative(int[] sides) throws TriangleCheckException {
-        Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestNegative(int[] sides) throws TriangleException {
+        Assertions.assertFalse(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderEquals() {
@@ -48,8 +48,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquals")
-    public void triangleCheckTestEquals(int[] sides) throws TriangleCheckException {
-        Assertions.assertFalse(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestEquals(int[] sides) throws TriangleException {
+        Assertions.assertFalse(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderZero() {
@@ -63,8 +63,8 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderZero")
     public void triangleCheckTestZero(int[] sides) {
-        Assertions.assertThrows(TriangleCheckException.class, () -> {
-            TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
+        Assertions.assertThrows(TriangleException.class, () -> {
+            TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
@@ -80,8 +80,8 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderZeros")
     public void triangleCheckTestZeros(int[] sides) {
-        Assertions.assertThrows(TriangleCheckException.class, () -> {
-            TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
+        Assertions.assertThrows(TriangleException.class, () -> {
+            TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
@@ -96,8 +96,8 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumber")
     public void triangleCheckTestNegativeNumber(int[] sides) {
-        Assertions.assertThrows(TriangleCheckException.class, () -> {
-            TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
+        Assertions.assertThrows(TriangleException.class, () -> {
+            TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
@@ -113,8 +113,8 @@ public class TestTriangleCheck {
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumbers")
     public void triangleCheckTestNegativeNumbers(int[] sides) {
-        Assertions.assertThrows(TriangleCheckException.class, () -> {
-            TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]);
+        Assertions.assertThrows(TriangleException.class, () -> {
+            TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
@@ -128,8 +128,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderIsosceles")
-    public void triangleCheckTestIsosceles(int[] sides) throws TriangleCheckException {
-        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestIsosceles(int[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderEquilateral() {
@@ -142,8 +142,8 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquilateral")
-    public void triangleCheckTestEquilateral(int[] sides) throws TriangleCheckException {
-        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestEquilateral(int[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
     static Stream<Arguments> intArrayProviderRight() {
@@ -156,7 +156,7 @@ public class TestTriangleCheck {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderRight")
-    public void triangleCheckTestRight(int[] sides) throws TriangleCheckException {
-        Assertions.assertTrue(TriangleCheck.checkTriangle(sides[0], sides[1], sides[2]));
+    public void triangleCheckTestRight(int[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleUtil.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 }
