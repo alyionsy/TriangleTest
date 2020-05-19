@@ -20,7 +20,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderPositive")
-    public void triangleCheckTestPositive(int[] sides) throws TriangleException {
+    public void triangleValidatorTestPositive(int[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
@@ -34,7 +34,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderNegative")
-    public void triangleCheckTestNegative(int[] sides) throws TriangleException {
+    public void triangleValidatorTestNegative(int[] sides) throws TriangleException {
         Assertions.assertFalse(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
@@ -48,7 +48,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquals")
-    public void triangleCheckTestEquals(int[] sides) throws TriangleException {
+    public void triangleValidatorTestEquals(int[] sides) throws TriangleException {
         Assertions.assertFalse(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
@@ -62,7 +62,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderZero")
-    public void triangleCheckTestZero(int[] sides) {
+    public void triangleValidatorTestZero(int[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
@@ -79,7 +79,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderZeros")
-    public void triangleCheckTestZeros(int[] sides) {
+    public void triangleValidatorTestZeros(int[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
@@ -95,7 +95,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumber")
-    public void triangleCheckTestNegativeNumber(int[] sides) {
+    public void triangleValidatorTestNegativeNumber(int[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
@@ -112,7 +112,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderNegativeNumbers")
-    public void triangleCheckTestNegativeNumbers(int[] sides) {
+    public void triangleValidatorTestNegativeNumbers(int[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
@@ -128,7 +128,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderIsosceles")
-    public void triangleCheckTestIsosceles(int[] sides) throws TriangleException {
+    public void triangleValidatorTestIsosceles(int[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
@@ -142,7 +142,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderEquilateral")
-    public void triangleCheckTestEquilateral(int[] sides) throws TriangleException {
+    public void triangleValidatorTestEquilateral(int[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
@@ -156,7 +156,7 @@ public class TestTriangleValidator {
 
     @ParameterizedTest
     @MethodSource("intArrayProviderRight")
-    public void triangleCheckTestRight(int[] sides) throws TriangleException {
+    public void triangleValidatorTestRight(int[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 }
