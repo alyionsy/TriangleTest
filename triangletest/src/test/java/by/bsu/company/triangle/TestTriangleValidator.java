@@ -10,153 +10,128 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class TestTriangleValidator {
-    static Stream<Arguments> intArrayProviderPositive() {
+    static Stream<Arguments> doubleArrayProviderPositive() {
         return Stream.of(
-                Arguments.of((Object) new int[]{3, 4, 5}),
-                Arguments.of((Object) new int[]{6, 7, 10}),
-                Arguments.of((Object) new int[]{10, 25, 30})
+                Arguments.of((Object) new double[]{3.124, 4.43, 5.346}),
+                Arguments.of((Object) new double[]{6.124, 7.34, 10.3552}),
+                Arguments.of((Object) new double[]{10.124, 25.346, 30.23}),
+                Arguments.of((Object) new double[]{2.193, 2.76, 0.93})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderPositive")
-    public void triangleValidatorTestPositive(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderPositive")
+    public void triangleValidatorTestPositive(double[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
-    static Stream<Arguments> intArrayProviderNegative() {
+    static Stream<Arguments> doubleArrayProviderNegative() {
         return Stream.of(
-                Arguments.of((Object) new int[]{3, 4, 9}),
-                Arguments.of((Object) new int[]{6, 7, 1}),
-                Arguments.of((Object) new int[]{10, 20, 33})
+                Arguments.of((Object) new double[]{3.32, 4.67, 9.124}),
+                Arguments.of((Object) new double[]{6.1346, 7.42, 0.35}),
+                Arguments.of((Object) new double[]{10.876, 20.124, 33.234})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderNegative")
-    public void triangleValidatorTestNegative(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderNegative")
+    public void triangleValidatorTestNegative(double[] sides) throws TriangleException {
         Assertions.assertFalse(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
-    static Stream<Arguments> intArrayProviderEquals() {
+    static Stream<Arguments> doubleArrayProviderEquals() {
         return Stream.of(
-                Arguments.of((Object) new int[]{3, 4, 7}),
-                Arguments.of((Object) new int[]{9, 5, 14}),
-                Arguments.of((Object) new int[]{10, 20, 30})
+                Arguments.of((Object) new double[]{3.0, 4.0, 7.0}),
+                Arguments.of((Object) new double[]{9.0, 5.0, 14.0}),
+                Arguments.of((Object) new double[]{10.0, 20.0, 30.0})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderEquals")
-    public void triangleValidatorTestEquals(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderEquals")
+    public void triangleValidatorTestEquals(double[] sides) throws TriangleException {
         Assertions.assertFalse(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
-    static Stream<Arguments> intArrayProviderZero() {
+    static Stream<Arguments> doubleArrayProviderZeros() {
         return Stream.of(
-                Arguments.of((Object) new int[]{0, 4, 7}),
-                Arguments.of((Object) new int[]{1, 0, 13}),
-                Arguments.of((Object) new int[]{2, 3, 0})
+                Arguments.of((Object) new double[]{0, 4.32, 7.12}),
+                Arguments.of((Object) new double[]{1.234, 0, 13.0}),
+                Arguments.of((Object) new double[]{2.235, 3.895, 0}),
+                Arguments.of((Object) new double[]{0, 0, 7.32}),
+                Arguments.of((Object) new double[]{0, 5.124, 0}),
+                Arguments.of((Object) new double[]{1.5, 0, 0}),
+                Arguments.of((Object) new double[]{0, 0, 0})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderZero")
-    public void triangleValidatorTestZero(int[] sides) {
+    @MethodSource("doubleArrayProviderZeros")
+    public void triangleValidatorTestZeros(double[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
-    static Stream<Arguments> intArrayProviderZeros() {
+    static Stream<Arguments> doubleArrayProviderNegativeNumber() {
         return Stream.of(
-                Arguments.of((Object) new int[]{0, 0, 7}),
-                Arguments.of((Object) new int[]{0, 5, 0}),
-                Arguments.of((Object) new int[]{1, 0, 0}),
-                Arguments.of((Object) new int[]{0, 0, 0})
+                Arguments.of((Object) new double[]{-5.23, 4.246, 7.53}),
+                Arguments.of((Object) new double[]{6.124, -9.135, 13.435}),
+                Arguments.of((Object) new double[]{3.12, 4.25, -5.622}),
+                Arguments.of((Object) new double[]{-5.436, -4.324, 7.0}),
+                Arguments.of((Object) new double[]{6.532, -9.523, -13.21}),
+                Arguments.of((Object) new double[]{-3.142, 4.234, -5.346}),
+                Arguments.of((Object) new double[]{-12.0, -5.124, -13.346})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderZeros")
-    public void triangleValidatorTestZeros(int[] sides) {
+    @MethodSource("doubleArrayProviderNegativeNumber")
+    public void triangleValidatorTestNegativeNumber(double[] sides) {
         Assertions.assertThrows(TriangleException.class, () -> {
             TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
         });
     }
 
-    static Stream<Arguments> intArrayProviderNegativeNumber() {
+    static Stream<Arguments> doubleArrayProviderIsosceles() {
         return Stream.of(
-                Arguments.of((Object) new int[]{-5, 4, 7}),
-                Arguments.of((Object) new int[]{6, -9, 13}),
-                Arguments.of((Object) new int[]{3, 4, -5})
+                Arguments.of((Object) new double[]{5.0, 4.2, 4.2}),
+                Arguments.of((Object) new double[]{9.76, 9.76, 7.33}),
+                Arguments.of((Object) new double[]{20.0, 20.0, 10.235})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderNegativeNumber")
-    public void triangleValidatorTestNegativeNumber(int[] sides) {
-        Assertions.assertThrows(TriangleException.class, () -> {
-            TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
-        });
-    }
-
-    static Stream<Arguments> intArrayProviderNegativeNumbers() {
-        return Stream.of(
-                Arguments.of((Object) new int[]{-5, -4, 7}),
-                Arguments.of((Object) new int[]{6, -9, -13}),
-                Arguments.of((Object) new int[]{-3, 4, -5}),
-                Arguments.of((Object) new int[]{-12, -5, -13})
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource("intArrayProviderNegativeNumbers")
-    public void triangleValidatorTestNegativeNumbers(int[] sides) {
-        Assertions.assertThrows(TriangleException.class, () -> {
-            TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]);
-        });
-    }
-
-    static Stream<Arguments> intArrayProviderIsosceles() {
-        return Stream.of(
-                Arguments.of((Object) new int[]{5, 4, 4}),
-                Arguments.of((Object) new int[]{9, 9, 7}),
-                Arguments.of((Object) new int[]{20, 20, 10})
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource("intArrayProviderIsosceles")
-    public void triangleValidatorTestIsosceles(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderIsosceles")
+    public void triangleValidatorTestIsosceles(double[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
-    static Stream<Arguments> intArrayProviderEquilateral() {
+    static Stream<Arguments> doubleArrayProviderEquilateral() {
         return Stream.of(
-                Arguments.of((Object) new int[]{1, 1, 1}),
-                Arguments.of((Object) new int[]{13, 13, 13}),
-                Arguments.of((Object) new int[]{50, 50, 50})
+                Arguments.of((Object) new double[]{1.0, 1.0, 1.0}),
+                Arguments.of((Object) new double[]{13.155, 13.155, 13.155}),
+                Arguments.of((Object) new double[]{50.46, 50.46, 50.46})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderEquilateral")
-    public void triangleValidatorTestEquilateral(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderEquilateral")
+    public void triangleValidatorTestEquilateral(double[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 
-    static Stream<Arguments> intArrayProviderRight() {
+    static Stream<Arguments> doubleArrayProviderRight() {
         return Stream.of(
-                Arguments.of((Object) new int[]{3, 4, 5}),
-                Arguments.of((Object) new int[]{5, 13, 12}),
-                Arguments.of((Object) new int[]{33, 56, 65})
+                Arguments.of((Object) new double[]{3.0, 4.0, 5.0}),
+                Arguments.of((Object) new double[]{5.0, 13.0, 12.0}),
+                Arguments.of((Object) new double[]{33.0, 56.0, 65.0})
         );
     }
 
     @ParameterizedTest
-    @MethodSource("intArrayProviderRight")
-    public void triangleValidatorTestRight(int[] sides) throws TriangleException {
+    @MethodSource("doubleArrayProviderRight")
+    public void triangleValidatorTestRight(double[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 }
