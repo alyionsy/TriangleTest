@@ -29,7 +29,8 @@ public class TestTriangleValidator {
         return Stream.of(
                 Arguments.of((Object) new double[]{3.32, 4.67, 9.124}),
                 Arguments.of((Object) new double[]{6.1346, 7.42, 0.35}),
-                Arguments.of((Object) new double[]{10.876, 20.124, 33.234})
+                Arguments.of((Object) new double[]{10.876, 20.124, 33.234}),
+                Arguments.of((Object) new double[]{7.42, Double.MAX_VALUE, 6.35})
         );
     }
 
@@ -132,6 +133,34 @@ public class TestTriangleValidator {
     @ParameterizedTest
     @MethodSource("doubleArrayProviderRight")
     public void triangleValidatorTestRight(double[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
+    }
+
+    static Stream<Arguments> doubleArrayProviderMaxValues() {
+        return Stream.of(
+                Arguments.of((Object) new double[]{Double.MAX_VALUE, Double.MAX_VALUE - 1.0, Double.MAX_VALUE - 2.0}),
+                Arguments.of((Object) new double[]{Double.MAX_VALUE + 10.0, Double.MAX_VALUE - 10.0, Double.MAX_VALUE - 20.0}),
+                Arguments.of((Object) new double[]{Double.MAX_VALUE - 50.0, Double.MAX_VALUE - 10.0, Double.MAX_VALUE - 20.0})
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("doubleArrayProviderMaxValues")
+    public void triangleValidatorTestMaxValues(double[] sides) throws TriangleException {
+        Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
+    }
+
+    static Stream<Arguments> doubleArrayProviderMinValues() {
+        return Stream.of(
+                Arguments.of((Object) new double[]{Double.MIN_VALUE + 5.346, Double.MIN_VALUE + 3.124, Double.MIN_VALUE + 4.43}),
+                Arguments.of((Object) new double[]{Double.MIN_VALUE + 6.124, Double.MIN_VALUE + 7.34, Double.MIN_VALUE + 10.3552}),
+                Arguments.of((Object) new double[]{Double.MIN_VALUE * 2.0, Double.MIN_VALUE * 2.1, Double.MIN_VALUE * 3.0})
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("doubleArrayProviderMinValues")
+    public void triangleValidatorTestMinValues(double[] sides) throws TriangleException {
         Assertions.assertTrue(TriangleValidator.isTriangleCorrect(sides[0], sides[1], sides[2]));
     }
 }
